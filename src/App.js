@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { store } from "./store";
+import { Provider } from "react-redux";
+import TopTracksPage from "./pages/TopTracksPage/TopTracksPage";
+import ArtistPage from "./pages/ArtistPage/ArtistPage";
+import SearchTracksPage from "./pages/SearchTrackPage/SearchTrackPage";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={TopTracksPage} />
+          <Route exact path="/artist/:artistName" component={ArtistPage} />
+          <Route exact path="/search" component={SearchTracksPage} />
+        </Switch>
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;

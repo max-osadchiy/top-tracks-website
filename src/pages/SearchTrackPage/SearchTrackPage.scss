@@ -1,0 +1,21 @@
+.searchTrackPage {
+  margin: 2rem;
+  & > input {
+    padding: 8px 16px;
+    border-color: transparent;
+    border-bottom: 2px white solid;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    outline: none;
+    color: white;
+  }
+  .track-container {
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
