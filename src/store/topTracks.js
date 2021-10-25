@@ -14,7 +14,6 @@ const tracksSlice = createSlice({
     });
     builder.addCase(fetchTracks.fulfilled, (state, action) => {
       state.tracks = action.payload.tracks.track;
-      console.log(state.tracks);
       state.loading = false;
     });
     builder.addCase(fetchTracks.rejected, state => {
